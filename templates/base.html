@@ -1,21 +1,31 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'bootstarp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstarp/css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstarp/js/bootstrap.min.js' %}">
     <title>
         {% block title %}{% endblock %}
     </title>
 </head>
 <body>
+<div class="container-fluid">
     {% include 'header.html' %}
-    {% block headmessage %}
-
-    {% endblock %}
-    <hr>
-    {% block content %}
-
-    {% endblock %}
-    <hr>
-    {% include 'footer.html' %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {% block headmessage %} {% endblock %}
+        </div>
+            <hr>
+        <div class="panel-body">
+                {% block content %} {% endblock %}
+        </div>
+            <hr>
+        <div class="panel-footer">
+                {% include 'footer.html' %}
+        </div>
+    </div>
+</div>
 </body>
 </html>
