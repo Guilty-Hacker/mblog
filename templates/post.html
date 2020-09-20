@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load markdown_deux_tags %}
 {% block title %}
-    <h1>{{ post.title }} - 文学天地</h1>
+    {{ post.title }} - 文学天地
 {% endblock %}
 {% block headmessage %}
     <p style="font-family: 楷体;font-size: 16pt;font-weight: bold">
@@ -10,7 +11,7 @@
 {% endblock %}
 {% block content %}
     <p style="font-family: 楷体;font-size: 16pt;font-weight: bold">
-        {{ post.body }}
+        {{ post.body | markdown }}
     </p>
 {% endblock %}
 

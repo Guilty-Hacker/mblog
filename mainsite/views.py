@@ -22,7 +22,7 @@ def showpost(request, slug):
     try:
         post = Post.objects.get(slug=slug)
         if post is not None:
-            return render(request,'post.html', locals())
+            return render(request, 'post.html', locals())
     except:
         return redirect('/')
 
